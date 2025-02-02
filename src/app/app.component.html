@@ -1,0 +1,27 @@
+<div class="bg-gray-900 flex justify-center items-center h-screen text-white">
+  <div class="bg-gray-700 p-6 rounded-lg shadow-lg">
+    <h1 class="text-3xl text-white font-bold">Time Flow and Keeper</h1>
+    <div class="text-center py-4">
+      <div class="text-5xl font-mono">{{ time() }}</div>
+      <div class="text-lg text-gray-400">{{ date() }}</div>
+    </div>
+    <hr class="border-gray-600 my-6" />
+    <div class="text-center py-4">
+      <div class="text-5xl font-mono">{{ stopwatchTimeDisplay() }}</div>
+      <div class="flex justify-center gap-4 mt-4">
+        @if(isRunning()){
+        <button class="bg-red-600 px-6 py-2 rounded" (click)="stop()">
+          Stop
+        </button>
+        }@else {
+        <button class="bg-green-600 px-6 py-2 rounded" (click)="start()">
+          Start
+        </button>
+        }
+        <button class="bg-blue-600 px-6 py-2 rounded ml-4" (click)="reset()">
+          Reset
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
